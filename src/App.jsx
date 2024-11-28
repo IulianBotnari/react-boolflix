@@ -1,12 +1,27 @@
 import { useState } from 'react'
-
+import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
+import Layout from './Components/Layout'
+import { GlobalContext } from './Context/GlobalContext'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
+      <GlobalContext value={{}}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+
+            </Route>
+
+
+          </Routes>
+
+        </BrowserRouter>
+      </GlobalContext>
 
     </>
   )

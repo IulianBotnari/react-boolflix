@@ -9,6 +9,26 @@ export default function FilmsComponent() {
     console.log(getFilms);
 
 
+    function star(num) {
+        const newNum = Math.round(num / 2)
+        if (newNum == 0) {
+            return ''
+        } else if (newNum == 1) {
+            return '🌟'
+        }
+        else if (newNum == 2) {
+            return '🌟🌟'
+        } else if (newNum == 3) {
+            return '🌟🌟🌟'
+        } else if (newNum == 4) {
+            return '🌟🌟🌟🌟'
+        } else if (newNum == 5) {
+            return '🌟🌟🌟🌟🌟'
+        }
+
+    }
+
+
     return (
         <>
 
@@ -23,7 +43,7 @@ export default function FilmsComponent() {
                             <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
                             <p className="color "><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
                             <p className="color "><strong>Descrizione: </strong>{film.overview}</p>
-                            <p className="color "><strong>Voto: </strong>{film.vote_average}</p>
+                            <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
 
                         </div>
 

@@ -22,6 +22,7 @@ export default function FilmsComponent() {
                     <p><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
                     <p><strong>Descrizione: </strong>{film.overview}</p>
                     <p><strong>Voto: </strong>{film.vote_average}</p>
+                    <img src={`http://image.tmdb.org/t/p/w185${film.poster_path}`} />
 
                 </div>
             ))}

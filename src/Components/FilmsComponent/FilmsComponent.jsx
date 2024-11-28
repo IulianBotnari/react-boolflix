@@ -25,7 +25,7 @@ export default function FilmsComponent() {
             <div className="col-6">
                 <h1 className="d-flex justify-content-center" >Films</h1>
                 <div className="row gx-0 flex-wrap justify-content-center">
-                    {getFilms.results?.map((film, index) => (
+                    {getFilms.results?.map((film, index) => (film.poster_path &&
                         <div className="relative w_185 col-4 m-4" key={index}>
                             <img src={`http://image.tmdb.org/t/p/w342${film.poster_path}`} style={{ width: "100%" }} />
                             <div className="layer">

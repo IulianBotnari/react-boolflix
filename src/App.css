@@ -48,9 +48,9 @@ img {
 p {
     font-size: 12px;
     margin: 0;
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
     width: 200px;
 
 }

@@ -32,7 +32,7 @@ export default function FilmsComponent() {
                                 <div className="d-none absolute clolor p-3">
                                     <p className="color "><strong>Titolo: </strong>{film.title}</p>
                                     <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
-                                    <p className="color "><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
+                                    <p className="color " maxLength="200"><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
                                     <p maxLength={20} className="color "><strong>Descrizione: </strong>{film.overview}</p>
                                     <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
                                 </div>

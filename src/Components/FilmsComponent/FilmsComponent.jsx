@@ -33,9 +33,9 @@ export default function FilmsComponent() {
         <>
             <div className="col-6">
 
-                <h1>Films</h1>
+                <h1 className="d-flex justify-content-center" >Films</h1>
 
-                <div className="row gx-0 flex-wrap">
+                <div className="row gx-0 flex-wrap justify-content-center">
 
                     {getFilms.results?.map((film, index) => (
                         <div className="relative w_185 col-4 m-4" key={index}>
@@ -46,7 +46,7 @@ export default function FilmsComponent() {
                                     <p className="color "><strong>Titolo: </strong>{film.title}</p>
                                     <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
                                     <p className="color "><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
-                                    <p className="color "><strong>Descrizione: </strong>{film.overview}</p>
+                                    <p maxLength={20} className="color "><strong>Descrizione: </strong>{film.overview}</p>
                                     <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
 
                                 </div>

@@ -26,11 +26,11 @@ export default function SeriesComponent() {
 
     return (
         <>
-            <div className="col-6 ">
+            <div className="col-6">
 
-                <h1>Series</h1>
+                <h1 className="d-flex justify-content-center">Series</h1>
 
-                <div className="row gx-0 flex-wrap">
+                <div className="row gx-0 flex-wrap justify-content-center">
 
                     {getSeries.results?.map((serie, index) => (
                         <div className="relative w_185 col-4 m-4 " key={index}>

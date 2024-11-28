@@ -10,12 +10,11 @@ function App() {
 
   return (
     <>
-      <GlobalContext value={{}}>
+      <GlobalContext>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Layout />} />
 
-            </Route>
 
 
           </Routes>

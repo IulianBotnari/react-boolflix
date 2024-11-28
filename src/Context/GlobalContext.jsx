@@ -8,10 +8,30 @@ export function GlobalContext({ children }) {
 
     const [getSeries, setSeries] = useState({})
 
-    const value = {}
+
+
+    async function handleFilmSearch(e) {
+        e.preventDefault()
+
+        try {
+            const response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query')
+            const data = await response.json()
+            console.log(data);
+
+        }
+
+        catch (error) {
+            console.error('Error:', error)
+        }
+
+    }
+
+
+
+    const value = { handleFilmSearch }
 
     return (
-        <context.Provider value={{}}>
+        <context.Provider value={value}>
             {children}
         </context.Provider>
     )

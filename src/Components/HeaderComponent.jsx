@@ -1,10 +1,11 @@
-import React, { Outlet, useState } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../Context/GlobalContext";
+import { Outlet } from "react-router";
 
 
 
 
-export default function Layout() {
+export default function HeaderComponent() {
     const { handleFilmSearch, setQuery } = useGlobalContext()
 
     function getQuery(e) {
@@ -45,17 +46,6 @@ export default function Layout() {
                 </form>
 
             </header>
-
-
-            <main>
-
-            </main>
-
-
-
-            <footer>
-                <p>�� 2023 My Website</p>
-            </footer>
 
 
 

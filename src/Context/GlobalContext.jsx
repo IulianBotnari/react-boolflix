@@ -20,6 +20,19 @@ export function GlobalContext({ children }) {
             const response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=' + query)
             const data = await response.json()
             console.log(data);
+            setGetFilms(data)
+
+        }
+
+        catch (error) {
+            console.error('Error:', error)
+        }
+
+        try {
+            const response = await fetch('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=' + query)
+            const data = await response.json()
+            console.log(data);
+            setSeries(data)
 
         }
 
@@ -33,7 +46,9 @@ export function GlobalContext({ children }) {
 
     const value = {
         handleFilmSearch,
-        setQuery
+        setQuery,
+        getFilms,
+        getSeries,
     }
 
     return (

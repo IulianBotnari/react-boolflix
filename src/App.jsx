@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
-import Layout from './Components/Layout'
+import HeaderComponent from './Components/HeaderComponent'
 import { GlobalContext } from './Context/GlobalContext'
+import FilmsComponent from './Components/FilmsComponent/FilmsComponent'
+import SeriesComponent from './Components/SeriesComponent/SeriesComponent'
 
 
 function App() {
@@ -11,15 +13,11 @@ function App() {
   return (
     <>
       <GlobalContext>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />} />
+        <HeaderComponent />
+        <FilmsComponent />
+        <SeriesComponent />
 
 
-
-          </Routes>
-
-        </BrowserRouter>
       </GlobalContext>
 
     </>

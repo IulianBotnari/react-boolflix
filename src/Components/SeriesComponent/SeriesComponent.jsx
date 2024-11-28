@@ -26,30 +26,41 @@ export default function SeriesComponent() {
 
     return (
         <>
+            <div className="col-6 ">
 
-            <h1>Series</h1>
-            {getSeries.results?.map((serie, index) => (
-                <div className="relative w_185" key={index}>
-                    <img src={`http://image.tmdb.org/t/p/w185${serie.poster_path}`} />
+                <h1>Series</h1>
 
-                    <div className="layer">
+                <div className="row gx-0 flex-wrap">
 
-                        <div className="absolute color">
+                    {getSeries.results?.map((serie, index) => (
+                        <div className="relative w_185 col-4 m-4 " key={index}>
+                            <img src={`http://image.tmdb.org/t/p/w342${serie.poster_path}`} style={{ width: "100%" }} />
+
+                            <div className="layer">
+
+                                <div className="d-none absolute color p-3">
 
 
 
-                            <p className="color"><strong>Titolo: </strong>{serie.name}</p>
-                            <p className="color"><strong>Titolo originale: </strong>{serie.original_name}</p>
-                            <p className="color"><strong>Lingua: </strong>{<Flag countryCode={serie.original_language} svg />}</p>
-                            <p className="color"><strong>Descrizione: </strong>{serie.overview}</p>
-                            <p className="color"><strong>Voto: </strong>{star(serie.vote_average)}</p>
+                                    <p className="color"><strong>Titolo: </strong>{serie.name}</p>
+                                    <p className="color"><strong>Titolo originale: </strong>{serie.original_name}</p>
+                                    <p className="color"><strong>Lingua: </strong>{<Flag countryCode={serie.original_language} svg />}</p>
+                                    <p className="color"><strong>Descrizione: </strong>{serie.overview}</p>
+                                    <p className="color"><strong>Voto: </strong>{star(serie.vote_average)}</p>
+
+                                </div>
+
+                            </div>
 
                         </div>
+                    ))}
 
-                    </div>
 
                 </div>
-            ))}
+
+
+
+            </div>
         </>
     )
 

@@ -31,26 +31,33 @@ export default function FilmsComponent() {
 
     return (
         <>
+            <div className="col-6">
 
-            <h1>Films</h1>
-            {getFilms.results?.map((film, index) => (
-                <div className="relative w_185" key={index}>
+                <h1>Films</h1>
 
-                    <img src={`http://image.tmdb.org/t/p/w185${film.poster_path}`} />
-                    <div className="layer">
-                        <div className="absolute clolor">
-                            <p className="color "><strong>Titolo: </strong>{film.title}</p>
-                            <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
-                            <p className="color "><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
-                            <p className="color "><strong>Descrizione: </strong>{film.overview}</p>
-                            <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
+                <div className="row gx-0 flex-wrap">
+
+                    {getFilms.results?.map((film, index) => (
+                        <div className="relative w_185 col-4 m-4" key={index}>
+
+                            <img src={`http://image.tmdb.org/t/p/w342${film.poster_path}`} style={{ width: "100%" }} />
+                            <div className="layer">
+                                <div className="d-none absolute clolor p-3">
+                                    <p className="color "><strong>Titolo: </strong>{film.title}</p>
+                                    <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
+                                    <p className="color "><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
+                                    <p className="color "><strong>Descrizione: </strong>{film.overview}</p>
+                                    <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
+
+                                </div>
+
+                            </div>
 
                         </div>
-
-                    </div>
+                    ))}
 
                 </div>
-            ))}
+            </div>
 
 
         </>

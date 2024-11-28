@@ -15,8 +15,12 @@ function App() {
       <GlobalContext>
 
         <HeaderComponent />
-        <FilmsComponent />
-        <SeriesComponent />
+
+        <main className='d-flex'>
+          <FilmsComponent />
+          <SeriesComponent />
+
+        </main>
 
 
       </GlobalContext>

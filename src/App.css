@@ -1,0 +1,51 @@
+.relative {
+    position: relative;
+
+
+}
+
+.absolute {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+}
+
+.w_185 {
+    width: 185px;
+
+
+    animation: rotate 2s linear infinite;
+}
+
+.color {
+    color: white;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 185px;
+    height: 100%;
+
+    div {
+        display: none;
+    }
+}
+
+p {
+    font-size: 8px;
+    margin: 0;
+}
+
+.layer:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 1000;
+
+    div {
+        display: block;
+    }
+
+}

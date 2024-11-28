@@ -24,7 +24,7 @@ export default function SeriesComponent() {
             <div className="col-6">
                 <h1 className="d-flex justify-content-center">Series</h1>
                 <div className="row gx-0 flex-wrap justify-content-center">
-                    {getSeries.results?.map((serie, index) => (
+                    {getSeries.results?.map((serie, index) => (serie.poster_path &&
                         <div className="relative w_185 col-4 m-4 " key={index}>
                             <img src={`http://image.tmdb.org/t/p/w342${serie.poster_path}`} style={{ width: "100%" }} />
                             <div className="layer">

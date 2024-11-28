@@ -5,7 +5,11 @@ import { useGlobalContext } from "../Context/GlobalContext";
 
 
 export default function Layout() {
-    const { handleFilmSearch } = useGlobalContext()
+    const { handleFilmSearch, setQuery } = useGlobalContext()
+
+    function getQuery(e) {
+        setQuery(e.target.value)
+    }
 
 
 
@@ -26,6 +30,7 @@ export default function Layout() {
                         id="search-bar"
                         aria-describedby="helpId"
                         placeholder=""
+                        onChange={(e) => getQuery(e)}
 
 
                     />

@@ -8,13 +8,16 @@ export function GlobalContext({ children }) {
 
     const [getSeries, setSeries] = useState({})
 
+    const [query, setQuery] = useState('')
+
+    // console.log(query);
 
 
     async function handleFilmSearch(e) {
         e.preventDefault()
 
         try {
-            const response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query')
+            const response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=' + query)
             const data = await response.json()
             console.log(data);
 
@@ -28,7 +31,10 @@ export function GlobalContext({ children }) {
 
 
 
-    const value = { handleFilmSearch }
+    const value = {
+        handleFilmSearch,
+        setQuery
+    }
 
     return (
         <context.Provider value={value}>

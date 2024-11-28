@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../../Context/GlobalContext"
+import Flag from "react-country-flag";
 
 
 export default function FilmsComponent() {
@@ -18,7 +19,7 @@ export default function FilmsComponent() {
 
                     <p><strong>Titolo: </strong>{film.title}</p>
                     <p><strong>Titolo originale: </strong>{film.original_title}</p>
-                    <p><strong>Lingua: </strong>{film.vote_average}</p>
+                    <p><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
                     <p><strong>Descrizione: </strong>{film.overview}</p>
                     <p><strong>Voto: </strong>{film.vote_average}</p>
 

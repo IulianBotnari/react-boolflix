@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       <GlobalContext>
+
         <HeaderComponent />
         <FilmsComponent />
         <SeriesComponent />

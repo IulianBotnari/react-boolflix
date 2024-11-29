@@ -28,6 +28,15 @@ export default function SeriesComponent() {
         }
 
     }
+
+
+    function overviewLenght(overview) {
+        if (overview.length > 100) {
+            return overview.substring(0, 100) + '...'
+        } else {
+            return overview
+        }
+    }
     return (
         <>
             <div className="col-6">
@@ -41,7 +50,7 @@ export default function SeriesComponent() {
                                     <p className="color"><strong>Titolo: </strong>{serie.name}</p>
                                     <p className="color"><strong>Titolo originale: </strong>{serie.original_name}</p>
                                     <p className="color"><strong>Lingua: </strong>{<Flag countryCode={languages(serie.original_language)} svg />}</p>
-                                    <p className="color"><strong>Descrizione: </strong>{serie.overview}</p>
+                                    <p className="color"><strong>Descrizione: </strong>{overviewLenght(serie.overview)}</p>
                                     <p className="color"><strong>Voto: </strong>{star(serie.vote_average)}</p>
                                 </div>
                             </div>

@@ -30,6 +30,14 @@ export default function FilmsComponent() {
         }
 
     }
+
+    function overviewLenght(overview) {
+        if (overview.length > 100) {
+            return overview.substring(0, 100) + '...'
+        } else {
+            return overview
+        }
+    }
     return (
         <>
             <div className="col-6">
@@ -43,7 +51,7 @@ export default function FilmsComponent() {
                                     <p className="color "><strong>Titolo: </strong>{film.title}</p>
                                     <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
                                     <p className="color "><strong>Lingua: </strong>{<Flag countryCode={languages(film.original_language)} svg />}</p>
-                                    <p className="color "><strong>Descrizione: </strong>{film.overview}</p>
+                                    <p className="color "><strong>Descrizione: </strong>{overviewLenght(film.overview)}</p>
                                     <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
                                 </div>
                             </div>

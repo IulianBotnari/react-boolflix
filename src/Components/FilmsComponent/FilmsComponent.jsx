@@ -20,6 +20,16 @@ export default function FilmsComponent() {
         }
 
     }
+
+
+    function languages(language) {
+        if (language === "en") {
+            return "GB"
+        } else {
+            return language
+        }
+
+    }
     return (
         <>
             <div className="col-6">
@@ -27,13 +37,13 @@ export default function FilmsComponent() {
                 <div className="row gx-0 flex-wrap justify-content-center">
                     {getFilms.results?.map((film, index) => (film.poster_path &&
                         <div className="relative w_185 col-4 m-4" key={index}>
-                            <img src={`http://image.tmdb.org/t/p/w342${film.poster_path}`} style={{ width: "100%" }} />
+                            <img className="img_border" src={`http://image.tmdb.org/t/p/w342${film.poster_path}`} style={{ width: "100%" }} />
                             <div className="layer">
                                 <div className="d-none absolute clolor p-3">
                                     <p className="color "><strong>Titolo: </strong>{film.title}</p>
                                     <p className="color "><strong>Titolo originale: </strong>{film.original_title}</p>
-                                    <p className="color " maxLength="200"><strong>Lingua: </strong>{<Flag countryCode={film.original_language} svg />}</p>
-                                    <p maxLength={20} className="color "><strong>Descrizione: </strong>{film.overview}</p>
+                                    <p className="color "><strong>Lingua: </strong>{<Flag countryCode={languages(film.original_language)} svg />}</p>
+                                    <p className="color "><strong>Descrizione: </strong>{film.overview}</p>
                                     <p className="color "><strong>Voto: </strong>{star(film.vote_average)}</p>
                                 </div>
                             </div>

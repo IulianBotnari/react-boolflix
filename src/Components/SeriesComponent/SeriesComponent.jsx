@@ -19,6 +19,15 @@ export default function SeriesComponent() {
             return '🌟🌟🌟🌟🌟'
         }
     }
+
+    function languages(language) {
+        if (language === "en") {
+            return "GB"
+        } else {
+            return language
+        }
+
+    }
     return (
         <>
             <div className="col-6">
@@ -26,12 +35,12 @@ export default function SeriesComponent() {
                 <div className="row gx-0 flex-wrap justify-content-center">
                     {getSeries.results?.map((serie, index) => (serie.poster_path &&
                         <div className="relative w_185 col-4 m-4 " key={index}>
-                            <img src={`http://image.tmdb.org/t/p/w342${serie.poster_path}`} style={{ width: "100%" }} />
+                            <img className="img_border" src={`http://image.tmdb.org/t/p/w342${serie.poster_path}`} style={{ width: "100%" }} />
                             <div className="layer">
                                 <div className="d-none absolute color p-3">
                                     <p className="color"><strong>Titolo: </strong>{serie.name}</p>
                                     <p className="color"><strong>Titolo originale: </strong>{serie.original_name}</p>
-                                    <p className="color"><strong>Lingua: </strong>{<Flag countryCode={serie.original_language} svg />}</p>
+                                    <p className="color"><strong>Lingua: </strong>{<Flag countryCode={languages(serie.original_language)} svg />}</p>
                                     <p className="color"><strong>Descrizione: </strong>{serie.overview}</p>
                                     <p className="color"><strong>Voto: </strong>{star(serie.vote_average)}</p>
                                 </div>

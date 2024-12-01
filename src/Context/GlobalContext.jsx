@@ -41,6 +41,8 @@ export function GlobalContext({ children }) {
         }
     }
 
+
+
     const value = {
         //export display setting
         setDisplayGenreFilm,

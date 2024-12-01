@@ -18,6 +18,9 @@ export default function FilterByGenderComponent() {
     const [genereFilm, setGenereFilm] = useState('');
     const [genereSerie, setGenereSerie] = useState('');
 
+    console.log(getSeries.results);
+
+
 
     function filterFilmsByGender(e) {
         e.preventDefault();

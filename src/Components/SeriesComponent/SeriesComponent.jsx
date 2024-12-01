@@ -49,7 +49,7 @@ export default function SeriesComponent() {
                 <h1 className="d-flex justify-content-center">Series</h1>
 
                 <div className={`row gx-0 flex-wrap justify-content-center  ${displayGenreSeries}`}>
-                    {selectSerieByGender.results?.map((serie, index) => (serie.poster_path &&
+                    {selectSerieByGender?.map((serie, index) => (serie.poster_path &&
                         <div className="relative w_185 col-4 m-4 " key={index}>
                             <img className="img_border" src={`http://image.tmdb.org/t/p/w342${serie.poster_path}`} style={{ width: "100%" }} />
                             <div className="layer">

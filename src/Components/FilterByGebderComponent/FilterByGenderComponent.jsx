@@ -64,7 +64,7 @@ export default function FilterByGenderComponent() {
 
     return (
 
-        <div className="d-flex justify-content-around bg-secondary p-3">
+        <div className="d-flex justify-content-around bg-danger p-3">
             <form className="d-flex my-2" onSubmit={filterFilmsByGender}>
 
                 <select className="form-select" aria-label="Default select example" value={genereFilm} onChange={(e) => setGenereFilm(e.target.value)}>

@@ -1,5 +1,10 @@
 import React, { useState, useContext, createContext, useEffect } from "react"
 const context = createContext()
+
+const apikey = import.meta.env.VITE_APP_API_KEY
+
+console.log(apikey);
+
 export function GlobalContext({ children }) {
 
     // API setting
@@ -22,7 +27,7 @@ export function GlobalContext({ children }) {
 
         // get films fetch
         try {
-            const response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=' + query)
+            const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=` + query)
             const data = await response.json()
             setGetFilms(data)
         }
@@ -32,7 +37,7 @@ export function GlobalContext({ children }) {
 
         //get series fetch
         try {
-            const response = await fetch('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=' + query)
+            const response = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${apikey}&language=it_IT&query=` + query)
             const data = await response.json()
             setSeries(data)
         }

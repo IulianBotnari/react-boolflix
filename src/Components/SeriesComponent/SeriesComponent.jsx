@@ -11,19 +11,15 @@ export default function SeriesComponent() {
 
     function star(num) {
         const newNum = Math.round(num / 2)
-        if (newNum == 0) {
-            return ''
-        } else if (newNum == 1) {
-            return '🌟'
-        } else if (newNum == 2) {
-            return '🌟🌟'
-        } else if (newNum == 3) {
-            return '🌟🌟🌟'
-        } else if (newNum == 4) {
-            return '🌟🌟🌟🌟'
-        } else if (newNum == 5) {
-            return '🌟🌟🌟🌟🌟'
+        const starArray = []
+
+
+        for (let i = 0; i < newNum; i++) {
+            starArray.push(<span key={[i]}>🌟</span>)
         }
+
+        return starArray
+
     }
 
     function languages(language) {
